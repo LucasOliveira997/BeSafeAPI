@@ -14,7 +14,7 @@ const upload = multer(uploadConfig);
 //Authenticate User
 routes.post('/authenticate', AuthController.store);
 //Authenticate Profissional
-routes.post('/profissionalauthenticate', ProfissionalAuthController.store);
+routes.post('/proauthenticate', ProfissionalAuthController.store);
 
 //User
 routes.post('/users', upload.single('thumbnail'), UserController.store);
