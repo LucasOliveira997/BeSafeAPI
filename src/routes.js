@@ -17,7 +17,7 @@ routes.post('/profissionalauthenticate', ProfissionalAuthController.store);
 
 
 //User
-routes.post('/users', upload.single('thumbnail'),UserController.store);
+routes.post('/users', upload.single('thumbnail'), UserController.store);
 routes.get('/users', UserController.index);
 
 //Profissional
