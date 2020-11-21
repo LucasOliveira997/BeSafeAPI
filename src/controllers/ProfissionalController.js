@@ -25,4 +25,6 @@ module.exports = {
 
         return res.json(profissional);
     }
+
+
 };
