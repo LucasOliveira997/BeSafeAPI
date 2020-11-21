@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const routes = require('./routes');
-
+const cors = require('cors');
 
 const app = express();
 
@@ -31,5 +31,5 @@ socketio.on("connection", (userSocket) => {
     })
 })
 
-http.listen(process.env.PORT);
+app.listen(3333);
 
