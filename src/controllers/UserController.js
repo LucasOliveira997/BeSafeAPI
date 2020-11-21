@@ -1,5 +1,7 @@
 const User =  require('../models/User');
 
+//teste
+
 module.exports = {
 
     async index(req, res) {
