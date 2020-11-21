@@ -22,5 +22,7 @@ routes.get('/users', UserController.index);
 
 //Profissional
 routes.post('/profissionais', upload.single('thumbnail'),ProfissionalController.store);
+routes.get('/profissionais', ProfissionalController.index);
+
 
 module.exports = routes;

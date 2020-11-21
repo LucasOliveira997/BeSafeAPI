@@ -1,6 +1,12 @@
 const Profissional = require('../models/Profissional');
 
 module.exports = {
+
+    async index(req, res) {
+        const profissional = await Profissional.find();
+        return res.json(profissional);
+      },
+
     async store(req, res) {
 
         const { filename } = req.file;
