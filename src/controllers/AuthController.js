@@ -14,6 +14,6 @@ module.exports = {
 
         user.password = undefined;        
 
-        return res.send({ user });
+        return res.status(200).send({ user });
     }
 };

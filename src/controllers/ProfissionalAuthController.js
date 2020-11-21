@@ -14,6 +14,6 @@ module.exports = {
 
         profissional.password = undefined;        
 
-        return res.send({ profissional });
+        return res.status(200).send({ profissional });
     }
 };
