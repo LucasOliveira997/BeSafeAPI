@@ -32,5 +32,5 @@ socketio.on("connection", (userSocket) => {
     })
 })
 
-app.listen(process.env.PORT || 3333);
+http.listen(process.env.PORT);
 
