@@ -9,6 +9,10 @@ const UserSchema = new mongoose.Schema({
     senha: String,
     thumbnail: String,
     chatId: String,
+},{
+    toJSON: {
+        virtuals: true,
+    }
 });
 
 UserSchema.pre('save', async function (next) {
@@ -16,6 +20,10 @@ UserSchema.pre('save', async function (next) {
     this.senha = hash; 
 
     next();
+});
+
+UserSchema.virtual('thumbnail_url').get(function(){
+    return `https://besafeserver.herokuapp.com/files/${this.thumbnail}`
 });
 
 module.exports = mongoose.model('User', UserSchema);
