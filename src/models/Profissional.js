@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const ProfissionalSchema = new mongoose.Schema({
     nome: String,
@@ -16,6 +17,13 @@ const ProfissionalSchema = new mongoose.Schema({
     toJSON: {
         virtuals: true,
     }
+});
+
+ProfissionalSchema.pre('save', async function (next) {
+    const hash = await bcrypt.hash(this.senha, 10);
+    this.senha = hash; 
+
+    next();
 });
 
 ProfissionalSchema.virtual('thumbnail_url').get(function(){
