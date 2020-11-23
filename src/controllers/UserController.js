@@ -16,7 +16,7 @@ module.exports = {
 
         if(!user){
             user = await User.create({ nome, cpf, dataNascimento, email, senha, chatId, thumbnail: filename });
-
+            return res.status(200).send({ user });
         }
 
         if(user){
