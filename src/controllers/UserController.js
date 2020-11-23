@@ -19,6 +19,10 @@ module.exports = {
 
         }
 
+        if(user){
+            return res.status(400).send({ error: 'Esse e-mail já está em uso' });
+        }
+
         return res.json(user);
     }
 };
