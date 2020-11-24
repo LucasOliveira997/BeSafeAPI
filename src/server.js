@@ -7,9 +7,7 @@ const path = require('path');
 
 const app = express();
 
-const http = require('http').createServer(app);
-
-mongoose.connect('mongodb+srv://besafe:besafe@app.o7cqx.mongodb.net/besafeserver?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://besafe:besafe@app.o7cqx.mongodb.net/serverbesafe?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
@@ -25,13 +23,5 @@ app.use(routes);
 app.use(bodyParser.json);
 app.use(bodyParser.urlencoded({ extended: false }));
 
-//Socket Logic
-const socketio = require('socket.io')(http)
 
-socketio.on("connection", (userSocket) => {
-    userSocket.on("send_message", (data) => {
-        userSocket.broadcast.emit("receive_message", data)
-    })
-})
-
-http.listen(process.env.PORT);
+app.listen(process.env.PORT || 3333);
