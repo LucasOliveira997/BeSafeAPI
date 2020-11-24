@@ -9,7 +9,7 @@ const app = express();
 
 const http = require('http').createServer(app);
 
-mongoose.connect('mongodb+srv://besafe:besafe@app.o7cqx.mongodb.net/serverbesafe?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://besafe:besafe@app.o7cqx.mongodb.net/besafeserver?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
