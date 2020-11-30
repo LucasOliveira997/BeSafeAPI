@@ -10,7 +10,7 @@ module.exports = {
     async store(req, res) {
 
         const { filename } = req.file;
-        const { nome, cpf, cnpj, crp,  dataNascimento, email, senha, profissao, valor, descricao } = req.body;
+        const { nome, cpf, cnpj, crp,  dataNascimento, email, senha, profissao, valor, preferenceId, descricao } = req.body;
 
         let profissional = await Profissional.findOne ({ email });
 
@@ -26,6 +26,7 @@ module.exports = {
                 profissao,
                 valor,
                 descricao,
+                preferenceId,
                 thumbnail: filename });
         }
 

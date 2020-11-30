@@ -13,6 +13,7 @@ const ProfissionalSchema = new mongoose.Schema({
     profissao: String,
     valor: String,
     descricao: String,
+    preferenceId: String,
 },{
     toJSON: {
         virtuals: true,
