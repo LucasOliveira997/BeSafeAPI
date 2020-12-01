@@ -28,6 +28,4 @@ routes.get('/profissionais', ProfissionalController.index);
 routes.get('/relacoes', RelacaoController.index);
 routes.post('/relacoes', RelacaoController.store);
 
-
-
 module.exports = routes;
